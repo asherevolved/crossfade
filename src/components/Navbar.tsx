@@ -2,6 +2,7 @@
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { useIntroComplete } from "@/components/VideoIntro";
+import Magnetic from "./Magnetic";
 
 const links = [
   { href: "#home", label: "Home" },
@@ -66,12 +67,12 @@ export default function Navbar() {
         </ul>
 
         {/* cta */}
+        <Magnetic strength={0.3}>
         <motion.a
           href="#enroll"
           initial={{ opacity: 0, x: 16 }}
           animate={introComplete ? { opacity: 1, x: 0 } : { opacity: 0, x: 16 }}
           transition={{ duration: 0.6, delay: 0.4, ease: [0.22, 1, 0.36, 1] }}
-          whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.97 }}
           className="group inline-flex items-center gap-2 bg-white text-black px-4 py-2 md:px-5 md:py-2.5 rounded-full text-sm font-medium hover:bg-white/90 transition"
         >
@@ -84,6 +85,7 @@ export default function Navbar() {
             →
           </motion.span>
         </motion.a>
+        </Magnetic>
       </nav>
     </motion.header>
   );

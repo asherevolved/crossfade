@@ -1,6 +1,7 @@
 "use client";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
+import GsapHeadline from "./GsapHeadline";
 
 const stagger = {
   hidden: {},
@@ -111,13 +112,10 @@ export default function About() {
         >
           <motion.span variants={fadeUp(0)} className="mono-label block mb-6">03 / About</motion.span>
 
-          <motion.h2
-            variants={fadeUp(0.05)}
-            className="display text-5xl md:text-6xl lg:text-7xl text-white"
-          >
-            Built behind the decks.<br />
-            <span className="text-white/40">Taught the same way.</span>
-          </motion.h2>
+          <GsapHeadline className="display text-5xl md:text-6xl lg:text-7xl text-white">
+            <span className="block">Built behind the decks.</span>
+            <span className="block text-white/40">Taught the same way.</span>
+          </GsapHeadline>
 
           <motion.div
             variants={stagger}

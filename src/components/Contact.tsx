@@ -1,6 +1,8 @@
 "use client";
 import { motion } from "framer-motion";
 import { useState } from "react";
+import GsapHeadline from "./GsapHeadline";
+import Magnetic from "./Magnetic";
 
 const fadeUp = (delay = 0) => ({
   hidden: { opacity: 0, y: 32 },
@@ -45,13 +47,10 @@ export default function Contact() {
         >
           <motion.span variants={fadeUp(0)} className="mono-label block mb-6">05 / Enroll</motion.span>
 
-          <motion.h2
-            variants={fadeUp(0.05)}
-            className="display text-6xl md:text-7xl lg:text-[6.5rem] text-white"
-          >
-            Ready to <br />
-            <span className="text-white/40">begin?</span>
-          </motion.h2>
+          <GsapHeadline className="display text-6xl md:text-7xl lg:text-[6.5rem] text-white">
+            <span className="block">Ready to</span>
+            <span className="block text-white/40">begin?</span>
+          </GsapHeadline>
 
           <motion.p variants={fadeUp(0.1)} className="serif-it text-xl md:text-2xl text-white/60 mt-8 max-w-md">
             Tell us a bit about yourself. We&apos;ll set up a no-pressure conversation.
@@ -116,10 +115,10 @@ export default function Contact() {
               <p className="text-xs text-white/40 max-w-sm">
                 By submitting, you agree to be contacted about enrollment. We never share your details.
               </p>
+              <Magnetic strength={0.35}>
               <motion.button
                 type="submit"
                 disabled={sent}
-                whileHover={{ scale: 1.04 }}
                 whileTap={{ scale: 0.97 }}
                 transition={{ type: "spring", stiffness: 400, damping: 20 }}
                 className="group inline-flex items-center gap-3 bg-white text-black px-7 py-4 rounded-full text-sm font-medium hover:bg-white/90 transition disabled:opacity-50"
@@ -135,6 +134,7 @@ export default function Contact() {
                   </motion.span>
                 )}
               </motion.button>
+              </Magnetic>
             </motion.div>
           </form>
         </motion.div>

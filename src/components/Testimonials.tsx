@@ -1,6 +1,7 @@
 "use client";
 import { motion } from "framer-motion";
 import { useRef } from "react";
+import GsapHeadline from "./GsapHeadline";
 
 type T = { quote: string; name: string; role: string; year: string };
 
@@ -65,16 +66,10 @@ export default function Testimonials() {
         <div className="flex items-end justify-between flex-wrap gap-6">
           <div>
             <span className="mono-label block mb-6">04 / Voices</span>
-            <motion.h2
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.9 }}
-              className="display text-5xl md:text-7xl text-white"
-            >
-              Words from <br />
-              <span className="text-white/40 serif-it font-normal italic">the people who left ready.</span>
-            </motion.h2>
+            <GsapHeadline className="display text-5xl md:text-7xl text-white">
+              <span className="block">Words from</span>
+              <span className="block text-white/40 serif-it font-normal italic">the people who left ready.</span>
+            </GsapHeadline>
           </div>
         </div>
       </div>

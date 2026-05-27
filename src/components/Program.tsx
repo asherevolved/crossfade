@@ -2,6 +2,7 @@
 import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
 import type { ReactNode } from "react";
 import { useRef } from "react";
+import GsapHeadline from "./GsapHeadline";
 
 type Pillar = { n: string; title: string; body: string; icon: ReactNode };
 
@@ -184,24 +185,10 @@ export default function Program() {
             <span className="mono-label mt-2">02 / The Program</span>
           </motion.div>
           <div className="col-span-12 md:col-span-8">
-            <motion.h2
-              initial={{ opacity: 0, y: 24 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-80px" }}
-              transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
-              className="display text-5xl md:text-7xl lg:text-8xl text-white"
-            >
-              What we teach.<br />
-              <motion.span
-                className="text-white/40"
-                initial={{ opacity: 0 }}
-                whileInView={{ opacity: 1 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.9, delay: 0.2 }}
-              >
-                How we teach.
-              </motion.span>
-            </motion.h2>
+            <GsapHeadline className="display text-5xl md:text-7xl lg:text-8xl text-white">
+              <span className="block">What we teach.</span>
+              <span className="block text-white/40">How we teach.</span>
+            </GsapHeadline>
             <motion.p
               initial={{ opacity: 0, y: 12 }}
               whileInView={{ opacity: 1, y: 0 }}

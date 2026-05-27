@@ -88,7 +88,7 @@ export default function Footer() {
             transition={{ duration: 1.1, ease: [0.16, 1, 0.3, 1] }}
             className="select-none pointer-events-none"
           >
-            <h3 className="display text-white text-[22vw] md:text-[18vw] leading-[0.85] tracking-tighter">
+            <h3 className="display text-white text-[19vw] md:text-[16vw] leading-[0.85] tracking-tight text-center whitespace-nowrap">
               CROSSFADE
             </h3>
           </motion.div>

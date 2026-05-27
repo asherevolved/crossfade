@@ -3,6 +3,7 @@ import { Inter, Instrument_Serif, JetBrains_Mono } from "next/font/google";
 import ScrollFader from "@/components/ScrollFader";
 import WhatsAppFloat from "@/components/WhatsAppFloat";
 import VideoIntro from "@/components/VideoIntro";
+import SmoothScroll from "@/components/SmoothScroll";
 import "./globals.css";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-sans", display: "swap" });
@@ -23,8 +24,9 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={`${inter.variable} ${serif.variable} ${mono.variable} scroll-smooth`}>
+    <html lang="en" className={`${inter.variable} ${serif.variable} ${mono.variable}`}>
       <body className="antialiased bg-black text-white font-sans">
+        <SmoothScroll />
         <div className="noise-overlay" aria-hidden />
         <ScrollFader />
         <WhatsAppFloat />

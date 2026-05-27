@@ -2,6 +2,7 @@
 import { motion, useScroll } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
 import { useIntroComplete } from "@/components/VideoIntro";
+import Magnetic from "./Magnetic";
 
 const TOTAL_FRAMES = 120;
 const frameSrc = (i: number) =>
@@ -235,14 +236,18 @@ export default function DeckScroll() {
                 One studio. One mentor. One uncompromising program.
               </p>
               <div className="flex flex-wrap items-center justify-center gap-4 mt-8 pointer-events-auto">
-                <a href="#enroll"
-                  className="group inline-flex items-center gap-3 bg-white text-black px-7 py-4 rounded-full text-sm font-medium hover:bg-white/90 transition">
-                  Enroll Now <span className="group-hover:translate-x-1 transition-transform inline-block">→</span>
-                </a>
-                <a href="#program"
-                  className="inline-flex items-center gap-3 border border-white/25 text-white px-7 py-4 rounded-full text-sm font-medium hover:border-white/60 hover:bg-white/8 transition">
-                  ▶ Explore the Program
-                </a>
+                <Magnetic strength={0.4}>
+                  <a href="#enroll"
+                    className="group inline-flex items-center gap-3 bg-white text-black px-7 py-4 rounded-full text-sm font-medium hover:bg-white/90 transition">
+                    Enroll Now <span className="group-hover:translate-x-1 transition-transform inline-block">→</span>
+                  </a>
+                </Magnetic>
+                <Magnetic strength={0.35}>
+                  <a href="#program"
+                    className="inline-flex items-center gap-3 border border-white/25 text-white px-7 py-4 rounded-full text-sm font-medium hover:border-white/60 hover:bg-white/10 transition">
+                    ▶ Explore the Program
+                  </a>
+                </Magnetic>
               </div>
             </div>
           </div>
